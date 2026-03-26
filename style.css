@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #F9F6F1;
+  color: #111111;
+  min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid #e0ddd8;
+  background-color: #F9F6F1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: #555;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Main */
+main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* Sections */
+section {
+  margin-top: 4rem;
+}
+
+section h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0ddd8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.78rem;
+  color: #aaa;
+  border-top: 1px solid #e0ddd8;
+  margin-top: 4rem;
+}
