@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Gallien</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: #fafaf8;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    /* ── Navigation ────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      border-bottom: 1px solid #e0ddd8;
+      background-color: #fafaf8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: #555;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* ── Main layout ───────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── Hero / About ──────────────────────────────────────── */
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 4px;
+      object-fit: cover;
+      background-color: #ddd;
+      /* placeholder gradient until a real photo is dropped in */
+      background-image: linear-gradient(135deg, #c9d6df, #e2ebf0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      color: #888;
+      text-align: center;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-text .tagline {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #333;
+      max-width: 560px;
+    }
+
+    /* ── Sections ──────────────────────────────────────────── */
+    section {
+      margin-top: 4rem;
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e0ddd8;
+    }
+
+    /* ── Research / Publications list ──────────────────────── */
+    .publications {
+      list-style: none;
+    }
+
+    .publications li {
+      margin-bottom: 1.75rem;
+    }
+
+    .publications .pub-title {
+      font-size: 1rem;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    .publications .pub-title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .publications .pub-title a:hover {
+      color: #000;
+      border-color: #555;
+    }
+
+    .publications .pub-meta {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    /* ── Contact ───────────────────────────────────────────── */
+    .contact-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-links a:hover {
+      color: #000;
+      border-color: #555;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      color: #aaa;
+      border-top: 1px solid #e0ddd8;
+      margin-top: 4rem;
+    }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+      }
+
+      main {
+        padding: 2.5rem 1.25rem 4rem;
+      }
+
+      .hero {
+        flex-direction: column;
+        gap: 1.75rem;
+      }
+
+      .hero-photo {
+        width: 160px;
+        height: 160px;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <div class="hero" id="about">
+      <div class="hero-photo">
+        <!-- Replace src with your actual photo, e.g. src="photo.jpg" -->
+        <!-- <img src="photo.jpg" alt="Alex Gallien" /> -->
+        photo
+      </div>
+      <div class="hero-text">
+        <h1>Alex Gallien</h1>
+        <p class="tagline">Your Title &middot; Your Institution</p>
+        <p>
+          Hi, I'm Alex. Write a short introduction about yourself here —
+          your background, what you work on, and what you care about.
+          Keep it friendly and human.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Research ───────────────────────────────────────── -->
+    <section id="research">
+      <h2>Research</h2>
+      <p style="line-height:1.75; color:#333; font-size:1rem;">
+        Describe your research interests here. What questions do you work on?
+        What methods do you use? Who do you collaborate with?
+        You can write a few sentences or a short paragraph.
+      </p>
+    </section>
+
+    <!-- ── Publications ───────────────────────────────────── -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publications">
+        <li>
+          <div class="pub-title">
+            <a href="#">Paper Title One: A Subtitle That Explains More</a>
+          </div>
+          <div class="pub-meta">Alex Gallien, Co-Author Name &mdash; Conference / Journal, 2024</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="#">Paper Title Two: Another Great Paper</a>
+          </div>
+          <div class="pub-meta">Alex Gallien &mdash; Conference / Journal, 2023</div>
+        </li>
+        <li>
+          <div class="pub-title">
+            <a href="#">Paper Title Three</a>
+          </div>
+          <div class="pub-meta">Alex Gallien, Co-Author &mdash; Workshop, 2022</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────────── -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-links">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="#" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Alex Gallien
+  </footer>
+
+</body>
+</html>
