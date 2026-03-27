@@ -105,3 +105,101 @@ footer {
   border-top: 1px solid #e0ddd8;
   margin-top: 4rem;
 }
+
+/* Resume — Experience */
+.job {
+  margin-bottom: 2.5rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.job-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.job-date {
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.job-company {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.job ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.job ul li {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+/* Resume — Education */
+.edu-item {
+  margin-bottom: 1.5rem;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.edu-date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.15rem;
+}
+
+/* Resume — Certifications */
+.cert-item {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.cert-issuer {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Resume — Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: #ede9e3;
+  border-radius: 3px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  color: #333;
+}
